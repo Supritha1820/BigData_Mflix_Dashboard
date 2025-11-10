@@ -12,6 +12,7 @@ client = MongoClient(uri)
 db = client["sample_mflix"]
 collection = db["movies"]
 
+
 # 📥 Data Loading
 data = list(collection.find({}, {"_id": 0, "title": 1, "genres": 1, "year": 1, "imdb": 1}))
 df = pd.DataFrame(data)
